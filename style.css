@@ -3,14 +3,15 @@ html, body{
     padding: 0;
     width: 100%;
     background-color: #f5f5f5;
+    font-family: 'Outfit', sans-serif;
 }
 .container{
-    max-width: 1200px;
+    max-width: 1000px;
     padding: 0 2em;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(14,1fr);
+    grid-template-rows: repeat(15,1fr);
     grid-gap: 1em;
 }
 .label{
@@ -18,45 +19,168 @@ html, body{
     text-transform: uppercase;
     font-size: 16px;
 }
+.gray{
+    color: #828282;
+}
 section{
     padding: 2em;
+    border-radius: 20px;
     background-color: white;
+    color: #4f4f4f;
 }
 #profile{
     display:flex;
-    padding: 2em 4em;
     grid-area: 1/1/3/13
+}
+#profile p{
+    margin: 5px 0;
 }
 #profile img{
     width:100%;
     max-width: 200px;
     height: auto;
+    object-fit: cover;
+    border-radius: 10px;
 }
-#profile .flex{
+#profile .text{
+    margin: 0 1em;
+}
+#profile .text .summary{
+    margin: 2em 0;
+}
+#profile .text .flex{
     display: flex;
     justify-content: space-between;
 }
+#profile .text .flex .name{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* SKILlS */
 #skills{
     grid-area: 3/1/5/5;
 }
 #skills ul{
     list-style-type: none;
+    padding: 0;
 }
+#skills ul li{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+#skills ul li p{
+    margin: 0;
+}
+#skills ul li .bar{
+    width: 150px;
+    height: 10px;
+    background-color: #828282;
+    border-radius: 15px;
+    margin: auto 0;
+}
+#skills ul li .bar .progress{
+    background-color: purple;
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+/* BLOG */
 #blog{
     grid-area: 3/5/7/13
 }
+#blog .cover{
+    display: flex;
+}
+#blog .cover .title{
+    font-size: 28px;
+}
+#blog .cover img{
+    width: 100%;
+    height:auto;
+    object-fit: cover;
+    border-radius: 15px;
+    max-width: 500px;
+    max-height: 250px;
+}
+#blog a{
+    color: purple;
+}
+
+/* HOBBIES */
 #hobbies{
-    grid-area: 5/1/10/5;
+    grid-area: 5/1/11/5;
 }
 #hobbies ul{
     list-style-type: none;
+    padding: 0;
 }
+#hobbies ul li img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 300px;
+    max-height: 130px;
+    border-radius: 15px;
+}
+
+/* EXPERIENCE */
 #experience{
-    grid-area: 7/5/10/13;
+    grid-area: 7/5/11/13;
 }
+#experience .job{
+    display: flex;
+}
+#experience .job img{
+    width: 100%;
+    height: auto;
+    max-width: 175px;
+    max-height: 175px;
+    border-radius: 15px;
+}
+
+/* TAGS */
 #tags{
-    grid-area: 10/1/11/13;
+    grid-area: 11/1/12/13;
+    padding: 1em 2em;
 }
+#tags #tagList{
+    display: flex;
+}
+#tags #tagList button{
+    margin: 5px;
+    padding: 3px 13px;
+    border: 1px solid black;
+    background: transparent;
+    border-radius: 30px;
+}
+
+/* PROJECTS */
 #projects{
-    grid-area: 11/1/15/13;
+    grid-area: 12/1/16/13;
+    background-color: #f5f5f5;
+    padding: 0;
+}
+#projects #projectList{
+    display: flex;
+    gap: 1em;
+}
+#projects #projectList .project{
+    background-color: white;
+    padding: 1em;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+}
+#projects #projectList div img{
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.hidden {
+    display: none;
 }
