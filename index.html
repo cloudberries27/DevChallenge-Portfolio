@@ -16,10 +16,9 @@
       href="https://devchallenges.io/"
     />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
 
     <title>Portfolio</title>
 
@@ -28,54 +27,133 @@
   <body>
     <div class="container">
       <section id="profile">
-        <img src="billy.png"/>
-        <div>
+        <img src="profile.jpg"/>
+        <div class="text">
           <div class="flex">
             <div>
-              <p>Bill Pearson</p>
-              <p>Front-end Developer</p>
+              <p class="name">Claudia Rodriguez</p>
+              <p class="gray">Front-end Developer</p>
             </div>
             <div>
-              <p>billy@example.com</p>
-              <p>(631) 846-1023</p>
+              <p>example@gmail.com</p>
+              <p>(555) 555-5555</p>
             </div>
           </div>
-          <p>Self-motivated developer, who is willing to learn and create outstanding Ui applications.</p>
+          <p class="summary gray">Self-motivated developer, who is willing to learn and create outstanding Ui applications. Self-motivated developer, who is willing to learn and create outstanding Ui applications.Self-motivated developer, who is willing to learn and create outstanding Ui applications.</p>
         </div>
       </section>
       <section id="skills">
         <p class="label">Front end</p>
         <ul>
-          <li>Python</li>
-          <li>HTML</li>
-          <li>CSS/SCSS</li>
-          <li>React.JS</li>
-          <li>Gatsby.JS</li>
+          <li>
+            <p>Python</p>
+            <div class="bar">
+              <div class="progress"></div>
+            </div>
+          </li>
+          <li>
+            <p>HTML</p>
+            <div class="bar">
+              <div class="progress"></div>
+            </div>
+          </li>
+          <li>
+            <p>CSS/SCSS</p>
+            <div class="bar">
+              <div class="progress"></div>
+            </div>
+          </li>
+          <li>
+            <p>React.JS</p>
+            <div class="bar">
+              <div class="progress"></div>
+            </div>
+          </li>
+          <li>
+            <p>Gatsby.JS</p>
+            <div class="bar">
+              <div class="progress"></div>
+            </div>
+          </li>
+          <li>
+            <p>AWS</p>
+            <div class="bar">
+              <div class="progress"></div>
+            </div>
+          </li>
         </ul>
       </section>
       <section id="blog">
-        <p class="label">Blog</p>
-        <img src=""/>
-        <p class="title">Title</p>
-        <p class="subtitle">Subtitle</p>
+        <p class="label">Book Blog</p>
+        <div class="cover">
+          <div>
+            <p class="title">Crescent City: House of Earth and Blood</p>
+            <p>by: Sarah J. Maas</p>
+          </div>
+          <img src="https://images-na.ssl-images-amazon.com/images/I/91tFtUf+0ZL.jpg"/>
+        </div>
+        <p class="gray">Bryce Quinlan is a half fae half human college grad living in 
+          Crescent City and working at a gallery. She has an awesome group of friends and 
+          is living her best life. All of that changes when her friends get brutally 
+          massacred in their apartment. A police investigation leads to a lot of secrets 
+          being uncovered. People you thought you 
+          knew turn out to be someone completely different, and it's at the hardest of 
+          times when you find out who your real friends are.</p>
+        <a  target="_blank" rel="noreferrer" href="https://www.fanamera.com/crescent-city-house-of-earth-blood/">Read More</a>
       </section>
       <section id="hobbies">
         <p class="label">Hobbies</p>
         <ul>
-          <li>Reading</li>
-          <li>Learning</li>
-          <li>Hiking</li>
-          <li>Swimming</li>
+          <li>
+            <img src="https://source.unsplash.com/v8DSLoY80Xk/1600x900"/>
+            <p>Reading</p>
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/8H72wMWxj90/1600x900">
+            <p>Concerts</p>
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/6E6oMx-69Ns/1600x900"/>
+            <p>Hiking</p>
+          </li>
+          <li>
+            <img src="https://source.unsplash.com/i9QWgoRAdxI/1600x900"/>
+            <p>Swimming</p>
+          </li>
         </ul>
       </section>
       <section id="experience">
         <p class="label">experience</p>
+        <div class="job">
+          <img src="aventine.jpg"/>
+          <div>
+            <p class="date">Dec 2020 - Current</p>
+            <p class="job-title">Software Developer</p>
+            <p class="description">Created a new company website. Built a client portal web app
+              for the company's clients. Currently building some in house software for employees.
+            </p>
+          </div>
+        </div>
+        <div class="job">
+          <img src="naturesplus.jpg"/>
+          <div>
+            <p class="date">Jun 2019 - Aug 2019</p>
+            <p class="job-title">IT Intern</p>
+            <p class="description">Helped in rebuilding and redesigning the Discover Life 
+              website. Was featured in their web series "The Intern Life". Unfortunately,
+              both the website and series were taken down.</p>
+          </div>
+        </div>
       </section>
       <section id="tags">
-        <p class="label">tags</p>
+        <p class="label">projects</p>
+        <div id="tagList"></div>
       </section>
       <section id="projects">
-        <p class="label">projects</p>
+        <div id="projectList"></div>
+        <div class="ctrl-nav">
+          <a href="#">Previous</a><span id="pages"></span><a href="#">Next</a>
+        </div>
       </section>
     </div>
     <script src="script.js"></script>
