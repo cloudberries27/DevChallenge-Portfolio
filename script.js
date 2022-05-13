@@ -5,7 +5,7 @@ const projects=[
         "description": "Created a 404 not found page following the design. The page is responsive.",
         "demoLink": "https://cloudberries27.github.io/DevChallenge-404Page/",
         "codeLink": "https://github.com/cloudberries27/DevChallenge-404Page",
-        "tags": ["HTML", "Beginner", "Responsive"]
+        "tags": ["All", "Beginner", "Responsive"]
     },
     {
         "title": "Team Page",
@@ -13,7 +13,7 @@ const projects=[
         "description": "Created a my team page following the design. The page is responsive.",
         "demoLink": "https://cloudberries27.github.io/DevChallenge-TeamPage/",
         "codeLink": "https://github.com/cloudberries27/DevChallenge-TeamPage",
-        "tags": ["HTML", "Beginner", "Responsive"]
+        "tags": ["All", "Beginner", "Responsive"]
     },
     {
         "title": "Interior Consultant",
@@ -21,7 +21,7 @@ const projects=[
         "description": "Created an interior consultant landing page following the design. The page is responsive.",
         "demoLink": "https://cloudberries27.github.io/DevChallenge-InteriorConsultant/",
         "codeLink": "https://github.com/cloudberries27/DevChallenge-InteriorConsultant",
-        "tags": ["HTML", "Beginner", "Responsive"]
+        "tags": ["All", "Beginner", "Responsive"]
     },
     {
         "title": "Recipe Page",
@@ -29,7 +29,7 @@ const projects=[
         "description": "Created a recipe page following the design. The page is responsive.",
         "demoLink": "https://cloudberries27.github.io/DevChallenge-RecipeBlog/",
         "codeLink": "https://github.com/cloudberries27/DevChallenge-RecipeBlog",
-        "tags": ["HTML", "Beginner", "Responsive"]
+        "tags": ["All", "Beginner", "Responsive"]
     },
     {
         "title": "My Gallery",
@@ -37,7 +37,7 @@ const projects=[
         "description": "Created a gallery page following the design. Inspired by Instagram. The page is responsive.",
         "demoLink": "https://cloudberries27.github.io/DevChallenge-MyGallery/",
         "codeLink": "https://github.com/cloudberries27/DevChallenge-MyGallery",
-        "tags": ["HTML", "Beginner", "Responsive"]
+        "tags": ["All", "Beginner", "Responsive"]
     },
     {
         "title": "Checkout Page",
@@ -45,7 +45,7 @@ const projects=[
         "description": "Created a checkout page following the design. The page is responsive.",
         "demoLink": "https://cloudberries27.github.io/DevChallenge-Checkout/",
         "codeLink": "https://github.com/cloudberries27/DevChallenge-Checkout",
-        "tags": ["HTML", "Beginner", "Responsive"]
+        "tags": ["All", "Beginner", "Responsive"]
     },
     {
         "title": "Edie Homepage",
@@ -53,7 +53,7 @@ const projects=[
         "description": "Created a home page following the design. Incorporates all previous projects The page is responsive.",
         "demoLink": "https://cloudberries27.github.io/DevChallenge-EdieHomepage/",
         "codeLink": "https://github.com/cloudberries27/DevChallenge-EdieHomepage",
-        "tags": ["HTML", "Intermediate", "Responsive"]
+        "tags": ["All", "Intermediate", "Responsive"]
     }
 ]
 const projectElement = document.getElementById("projectList");
@@ -82,8 +82,10 @@ for (let item of projects){
     description.innerHTML = item.description;
     demoButton.href = item.demoLink;
     demoButton.innerHTML = "Demo";
+    codeButton.classList.add("border")
     codeButton.href = item.codeLink;
     codeButton.innerHTML = "Code";
+    buttons.classList.add("buttons")
     buttons.appendChild(demoButton);
     buttons.appendChild(codeButton);
     divElem.appendChild(title);
@@ -97,8 +99,6 @@ for (let item of tagsList){
     const tag = document.createElement("button");
     tag.innerHTML = item;
     tag.onclick = function(e){
-        console.log(e)
-        console.log(e.target.innerHTML)
         const projects = document.querySelectorAll(".project");
         let filter = e.target.innerHTML;
         projects.forEach(project => {
@@ -106,6 +106,40 @@ for (let item of tagsList){
             project.classList.remove('hidden') : 
             project.classList.add('hidden');
         });
+        makePages()
     };
     tagElement.appendChild(tag)
 }
+
+// Creates the page controls
+function makePages(){
+    var currentList = projectElement.querySelectorAll(".project:not(.hidden)");
+    const numberOfItems = currentList.length
+    const numberPerPage = 3
+    const numberOfPages = Math.ceil(numberOfItems/numberPerPage);;
+    const controls = document.getElementById("controls");
+    controls.innerHTML = "";
+    for(var p=1;p<=numberOfPages;p++){
+        const pageLink = document.createElement("button");
+        pageLink.innerHTML = p;
+        pageLink.onclick = function(e){
+            showPage(e.target.innerHTML)
+        }
+        controls.appendChild(pageLink);
+    }
+    showPage(1);
+    console.log(currentList)
+}
+
+// Displays the current page elements
+function showPage(page){
+    var currentList = projectElement.querySelectorAll(".project:not(.hidden)");
+    const numberPerPage = 3
+    const trimStart = (page-1)*numberPerPage
+    const trimEnd = trimStart + numberPerPage
+    currentList.forEach(project=>project.classList.add('hiddenPage'))
+    for (var i = trimStart; i<trimEnd; i++){
+        currentList[i].classList.remove('hiddenPage')
+    }
+}
+makePages()
