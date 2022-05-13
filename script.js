@@ -99,6 +99,8 @@ for (let item of tagsList){
     const tag = document.createElement("button");
     tag.innerHTML = item;
     tag.onclick = function(e){
+        tagElement.childNodes.forEach(child=>child.classList.remove("active"))
+        e.target.classList.add("active")
         const projects = document.querySelectorAll(".project");
         let filter = e.target.innerHTML;
         projects.forEach(project => {
@@ -110,6 +112,7 @@ for (let item of tagsList){
     };
     tagElement.appendChild(tag)
 }
+tagElement.childNodes[0].classList.add("active")
 
 // Creates the page controls
 function makePages(){
@@ -123,11 +126,14 @@ function makePages(){
         const pageLink = document.createElement("button");
         pageLink.innerHTML = p;
         pageLink.onclick = function(e){
+            document.getElementById("controls").childNodes.forEach(child=>child.classList.remove("active"))
+            e.target.classList.add("active")
             showPage(e.target.innerHTML)
         }
         controls.appendChild(pageLink);
     }
     showPage(1);
+    controls.childNodes[0].classList.add("active")
     console.log(currentList)
 }
 
@@ -142,4 +148,5 @@ function showPage(page){
         currentList[i].classList.remove('hiddenPage')
     }
 }
+
 makePages()
