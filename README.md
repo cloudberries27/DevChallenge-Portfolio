@@ -39,9 +39,9 @@
 ![screenshot](devchallenge001.gif)
 
 - Demo is above ^^
-- This was a CHALLENGE! Guys this was hard like going back to vanilla javascript I was like wow, I am so dependent on bootstrap, don't even know how to paginate without it smh. Anyway I did in fact figure things out and low key proud for doing it on my own. 
+- This was a CHALLENGE! Guys this was hard! Anyway I did in fact figure things out and low key proud for doing it on my own. Overall, very fun challenge!!
 - I learned how to paginate and filter using vanilla javascript.
-- Quote of the Day: 
+- Quote of the Day: “If you focus on what you left behind, you will never be able to see what lies ahead.” — Chef Gusteau (Ratatouille one of my faves)
 
 ### Built With
 
@@ -64,7 +64,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 - [Filtering By Tags](https://dev.to/dhintz89/simple-filters-in-css-or-js-185k)
 - [Pagination](https://medium.com/geekculture/building-a-javascript-pagination-as-simple-as-possible-a9c32dbf4ac1)
-- [Material Icons](https://fonts.google.com/icons)
+- [Simple Icons](https://simpleicons.org/)
 
 ## Contact
 
