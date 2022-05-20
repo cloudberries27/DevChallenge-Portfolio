@@ -59,6 +59,7 @@ const projects=[
 const projectElement = document.getElementById("projectList");
 const tagElement = document.getElementById("tagList");
 let tagsList = new Set();
+var currentPage = 1;
 
 // Creates project divs and add them to the document
 for (let item of projects){
@@ -114,27 +115,52 @@ for (let item of tagsList){
 }
 tagElement.childNodes[0].classList.add("active")
 
+function nextPage(){
+    console.log(currentPage)
+    const numberOfPages = getNumberOfPages();
+    if (currentPage+1 <= numberOfPages){
+        currentPage = currentPage + 1;
+        document.getElementById("pagecontrols").childNodes.forEach(child=>child.classList.remove("active"))
+        document.getElementById("pagecontrols").childNodes.forEach(child=>{
+            if (child.innerHTML == currentPage){
+                child.classList.add("active")
+            }
+        })
+        showPage(currentPage)
+    }
+}
+function backPage(){
+    if (currentPage-1 >= 1){
+        currentPage = currentPage - 1;
+        document.getElementById("pagecontrols").childNodes.forEach(child=>child.classList.remove("active"))
+        document.getElementById("pagecontrols").childNodes.forEach(child=>{
+            if (child.innerHTML == currentPage){
+                child.classList.add("active")
+            }
+        })
+        showPage(currentPage)
+    }
+}
 // Creates the page controls
 function makePages(){
-    var currentList = projectElement.querySelectorAll(".project:not(.hidden)");
-    const numberOfItems = currentList.length
-    const numberPerPage = 3
-    const numberOfPages = Math.ceil(numberOfItems/numberPerPage);;
-    const controls = document.getElementById("controls");
+    const numberOfPages = getNumberOfPages();
+    const controls = document.getElementById("pagecontrols");
+    currentPage = 1
     controls.innerHTML = "";
     for(var p=1;p<=numberOfPages;p++){
         const pageLink = document.createElement("button");
         pageLink.innerHTML = p;
         pageLink.onclick = function(e){
-            document.getElementById("controls").childNodes.forEach(child=>child.classList.remove("active"))
+            document.getElementById("pagecontrols").childNodes.forEach(child=>child.classList.remove("active"))
             e.target.classList.add("active")
+            currentPage = parseInt(e.target.innerHTML)
+            console.log(currentPage)
             showPage(e.target.innerHTML)
         }
         controls.appendChild(pageLink);
     }
-    showPage(1);
     controls.childNodes[0].classList.add("active")
-    console.log(currentList)
+    showPage(1);
 }
 
 // Displays the current page elements
@@ -147,6 +173,13 @@ function showPage(page){
     for (var i = trimStart; i<trimEnd; i++){
         currentList[i].classList.remove('hiddenPage')
     }
+}
+function getNumberOfPages(){
+    var currentList = projectElement.querySelectorAll(".project:not(.hidden)");
+    const numberOfItems = currentList.length
+    const numberPerPage = 3
+    const numberOfPages = Math.ceil(numberOfItems/numberPerPage);
+    return numberOfPages;
 }
 
 makePages()

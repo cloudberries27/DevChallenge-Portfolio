@@ -7,11 +7,11 @@ html, body{
 }
 .container{
     max-width: 1000px;
-    padding: 0 2em;
+    padding: 2em;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(15,1fr);
+    grid-template-rows: repeat(14,1fr);
     grid-gap: 1em;
 }
 .label{
@@ -43,10 +43,10 @@ section{
     border-radius: 10px;
 }
 #profile .text{
-    margin: 0 1em;
+    margin-left: 1em;
 }
 #profile .text .summary{
-    margin: 2em 0;
+    margin-top: 2em;
 }
 #profile .text .flex{
     display: flex;
@@ -55,6 +55,24 @@ section{
 #profile .text .flex .name{
     font-size: 20px;
     font-weight: bold;
+}
+#profile .text .flex .links a{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    margin: 5px 0;
+}
+#profile .text .flex .links a:hover{
+    color: purple;
+    fill:purple;
+}
+#profile .text .flex .links a p{
+    margin: 0;
+    margin-left: 5px;
+}
+#profile .text .flex .links a svg{
+    height: 20px;
+    width: 20px;
 }
 
 /* SKILlS */
@@ -82,9 +100,26 @@ section{
 }
 #skills ul li .bar .progress{
     background-color: purple;
-    width: 50%;
     height: 100%;
     border-radius: 15px;
+}
+#skills ul li .bar .progress.python{
+    width: 90%;
+}
+#skills ul li .bar .progress.html{
+    width: 90%;
+}
+#skills ul li .bar .progress.css{
+    width: 90%;
+}
+#skills ul li .bar .progress.react{
+    width: 75%;
+}
+#skills ul li .bar .progress.gatsby{
+    width: 50%;
+}
+#skills ul li .bar .progress.aws{
+    width: 40%;
 }
 
 /* BLOG */
@@ -132,6 +167,7 @@ section{
 }
 #experience .job{
     display: flex;
+    padding: 1em 0;
 }
 #experience .job img{
     width: 100%;
@@ -139,6 +175,10 @@ section{
     max-width: 175px;
     max-height: 175px;
     border-radius: 15px;
+}
+#experience .job .job-title{
+    font-size: larger;
+    font-weight: bold;
 }
 
 /* TAGS */
@@ -150,20 +190,21 @@ section{
     display: flex;
 }
 #tags #tagList button{
-    margin: 5px;
+    margin: 0 5px;
     padding: 3px 13px;
     border: 1px solid black;
     background: transparent;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 #tags #tagList button.active{
     background-color: purple;
     color:white;
+    border: 2px solid purple;
 }
 
 /* PROJECTS */
 #projects{
-    grid-area: 12/1/16/13;
+    grid-area: 12/1/15/13;
     background-color: #f5f5f5;
     padding: 0;
 }
@@ -201,24 +242,137 @@ section{
     border: 2px solid purple;
     color: black;
 }
-#projects #controls{
+#projects #controls, #pagecontrols{
     display: flex;
     justify-content: flex-end;
     gap: 10px;
 }
-#projects #controls button{
+#projects #controls button, #pagecontrols button{
     padding: 10px;
     border: 1px solid black;
     margin: 10px 0;
     border-radius: 5px;
 }
-#projects #controls button.active{
+#projects #pagecontrols button.active{
     background-color: purple;
     color: white;
+    border: 1px solid purple;
 }
 .hidden {
     display: none;
 }
 .hiddenPage {
     display: none;
+}
+footer{
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px){
+    section{
+        padding: 1.5em;
+    }
+    #experience .job{
+        padding: 0;
+    }
+    #skills ul li .bar {
+        width: 125px;
+    }
+}
+@media screen and (max-width: 900px){
+    p{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 800px){
+    section{
+        padding: 1em;
+    }
+    #skills ul li .bar {
+        width: 100px;
+    }
+    #projects #projectList .project .buttons a {
+        padding: 5px 15px;
+    }
+    #blog .cover img{
+        max-height: 200px;
+    }
+    .label{
+        margin: 5px 0;
+    }
+}
+@media screen and (max-width: 750px){
+    .container{
+        grid-template-rows: auto;
+        padding: 1em;
+    }
+    #profile{
+        grid-area: 1/1/4/13;
+    }
+    #skills{
+        grid-area: 4/1/7/13;
+    }
+    #skills ul li .bar {
+        width: 85%;
+    }
+    #hobbies{
+        grid-area: 7/1/10/13;
+    }
+    #hobbies ul{
+        display: flex;
+    }
+    #hobbies ul li{
+        margin: auto;
+    }
+    #hobbies ul li img {
+        max-width: 125px;
+    }
+    #blog{
+        grid-area: 10/1/16/13;
+    }
+    #experience{
+        grid-area: 16/1/22/13;
+    }
+    #tags{
+        grid-area: 22/1/24/13;
+    }
+    #projects{
+        grid-area: 24/1/29/13;
+    }
+}
+@media screen and (max-width: 650px){
+    #skills ul li .bar {
+        width: 75%;
+    }
+    #projects #projectList {
+        flex-direction: column;
+    }
+    #projects #projectList .project {
+        max-width: -webkit-fill-available;
+    }
+}
+@media screen and (max-width: 575px){
+    #profile .text .flex {
+        flex-direction: column;
+    }
+    #profile .text .summary {
+        display: none;
+    }
+}
+@media screen and (max-width: 500px){
+    #profile img {
+        max-width: unset;
+    }
+    #profile, #tags #tagList, #experience .job {
+        flex-wrap: wrap;
+    }
+    #hobbies ul {
+        display: unset;
+    }
+    #hobbies ul li img {
+        max-width: unset;
+    }
+    #tags #tagList button {
+        margin: 5px;
+    }
 }
