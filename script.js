@@ -50,10 +50,42 @@ const projects=[
     {
         "title": "Edie Homepage",
         "img": "https://devchallenges.io/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fdevchallenges-1234.appspot.com%2Fo%2FchallengesDesigns%252FEdieHomageThumbnail.png%3Falt%3Dmedia%26token%3D72c573b5-6389-425c-b947-de63f0f5b2ef&w=750&q=75",
-        "description": "Created a home page following the design. Incorporates all previous projects The page is responsive.",
+        "description": "Created a home page following the design. Incorporates all previous projects. The page is responsive.",
         "demoLink": "https://cloudberries27.github.io/DevChallenge-EdieHomepage/",
         "codeLink": "https://github.com/cloudberries27/DevChallenge-EdieHomepage",
+        "tags": ["All", "Elementary", "Responsive"]
+    },
+    {
+        "title": "Portfolio",
+        "img": "https://devchallenges.io/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fdevchallenges-1234.appspot.com%2Fo%2FchallengesDesigns%252FPortfolioThumbnail.png%3Falt%3Dmedia%26token%3D417f625d-715a-4611-8215-2c19aaf490f9&w=750&q=75",
+        "description": "Created a portfolio following the design. Incorporates all previous projects. The page is responsive.",
+        "demoLink": "https://cloudberries27.github.io/DevChallenge-Portfolio/",
+        "codeLink": "https://github.com/cloudberries27/DevChallenge-Portfolio",
         "tags": ["All", "Intermediate", "Responsive"]
+    },
+    {
+        "title": "Button Component",
+        "img": "https://devchallenges.io/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fdevchallenges-1234.appspot.com%2Fo%2FchallengesDesigns%252FButtonThumbnail.png%3Falt%3Dmedia%26token%3D3ddbedcf-a08b-4144-928f-e551b4bcee80&w=750&q=75",
+        "description": "Create a reusable button with all the states in the design and a page displaying all the states.",
+        "demoLink": "https://cloudberries27.github.io/DevChallenge-Button/",
+        "codeLink": "https://github.com/cloudberries27/DevChallenge-Button",
+        "tags": ["All", "Elementary", "FrontEnd", "React"]
+    },
+    {
+        "title": "Input Component",
+        "img": "https://devchallenges.io/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fdevchallenges-1234.appspot.com%2Fo%2FchallengesDesigns%252FInputThumbnail.png%3Falt%3Dmedia%26token%3D73685593-9026-42a6-8c68-00243071250e&w=750&q=75",
+        "description": "Create a reusable input with all the states in the design and a page displaying all the states.",
+        "demoLink": "https://cloudberries27.github.io/DevChallenge-Input/",
+        "codeLink": "https://github.com/cloudberries27/DevChallenge-Input",
+        "tags": ["All", "Elementary", "FrontEnd", "React"]
+    },
+    {
+        "title": "WindBnB",
+        "img": "https://devchallenges.io/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fdevchallenges-1234.appspot.com%2Fo%2FchallengesDesigns%252FwindbnbThumbnail.png%3Falt%3Dmedia%26token%3D183d7d36-d216-4d30-9732-aa6e4ab0e8a5&w=750&q=75",
+        "description": "Create a reusable input with all the states in the design and a page displaying all the states.",
+        "demoLink": "https://cloudberries27.github.io/DevChallenge-Windbnb/",
+        "codeLink": "https://github.com/cloudberries27/DevChallenge-Windbnb",
+        "tags": ["All", "Elementary", "FrontEnd", "React"]
     }
 ]
 const projectElement = document.getElementById("projectList");
