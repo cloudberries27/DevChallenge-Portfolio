@@ -86,6 +86,22 @@ const projects=[
         "demoLink": "https://cloudberries27.github.io/DevChallenge-Windbnb/",
         "codeLink": "https://github.com/cloudberries27/DevChallenge-Windbnb",
         "tags": ["All", "Elementary", "FrontEnd", "React"]
+    },
+    {
+        "title": "Weather App",
+        "img": "https://devchallenges.io/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fdevchallenges-1234.appspot.com%2Fo%2FchallengesDesigns%252FweatherThumbnail.png%3Falt%3Dmedia%26token%3D7645edd7-df0f-4ea1-9a8c-2bab7fe01431&w=750&q=75",
+        "description": "Create a weather app using an API and follow the user stories.",
+        "demoLink": "https://cloudberries27.github.io/DevChallenge-WeatherApp/",
+        "codeLink": "https://github.com/cloudberries27/DevChallenge-WeatherApp",
+        "tags": ["All", "Intermediate", "FrontEnd", "React"]
+    },
+    {
+        "title": "Github Jobs",
+        "img": "https://devchallenges.io/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fdevchallenges-1234.appspot.com%2Fo%2FchallengesDesigns%252FJobSearchThumbnail.png%3Falt%3Dmedia%26token%3D59d40095-f280-478f-a8c9-dc9d49f14471&w=750&q=75",
+        "description": "Create a job search using an API and follow the user stories",
+        "demoLink": "https://cloudberries27.github.io/DevChallenge-GithubJobs/",
+        "codeLink": "https://github.com/cloudberries27/DevChallenge-GithubJobs",
+        "tags": ["All", "Intermediate", "FrontEnd", "React"]
     }
 ]
 const projectElement = document.getElementById("projectList");
